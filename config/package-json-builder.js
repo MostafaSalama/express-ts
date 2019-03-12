@@ -1,0 +1,60 @@
+/*
+    this file is used to build
+    package.json file
+    for the created project
+    by the command line
+ */
+/**
+ *
+ * @param name {String} the name of the project
+ * @param view {Boolean} to use a template engine or not
+ * @param mongoose {Boolean} to use mongoose for db management
+ */
+module.exports = function(
+	name = 'express-ts app',
+	view = false,
+	mongoose = false,
+) {
+	// the version of the app
+	const version = '0.0.1';
+	const description = 'A simple express app created with express-ts';
+	const main = './bin/www.js';
+	const dependencies = {
+		'cookie-parser': '^1.4.4',
+		debug: '^4.1.1',
+		express: '^4.16.4',
+		'http-errors': '^1.7.2',
+		morgan: '^1.9.1',
+	};
+	const devDependencies = {
+		'@types/cookie-parser': '^1.4.1',
+		'@types/express': '^4.16.1',
+		'@types/http-errors': '^1.6.1',
+		'@types/node': '^11.11.0',
+	};
+	const scripts = {
+		start: 'node ./bin/www.js',
+	};
+
+	// add mongoose
+	if (mongoose) {
+		dependencies.mongoose = '^5.4.18';
+		devDependencies['@types/mongoose'] = '^5.3.21';
+	}
+	if (view) {
+		dependencies.pug = '^2.0.3';
+	}
+	const appPackage = {
+		version,
+		name,
+		description,
+		main,
+		scripts,
+		dependencies,
+		devDependencies,
+	};
+	return JSON.stringify(appPackage)
+		.replace(/[,{}]/ig,(str)=>{
+			return str+'\n';
+		});
+};
