@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "commander": "^2.19.0"
+  },
+  "name": "express-ts",
+  "description": "Command line for creating Express.js apps with TypeScript inspired by express application generator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MostafaSalama/express-ts.git"
+  },
+  "keywords": [
+    "command-line",
+    "typescript",
+    "express"
+  ],
+  "author": "Mostafa Salama",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MostafaSalama/express-ts/issues"
+  },
+  "homepage": "https://github.com/MostafaSalama/express-ts#readme"
+}
