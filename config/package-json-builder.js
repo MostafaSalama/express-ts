@@ -7,13 +7,10 @@
 /**
  *
  * @param name {String} the name of the project
- * @param view {Boolean} to use a template engine or not
- * @param mongoose {Boolean} to use mongoose for db management
+ * @return {String} the json string representation of package.json file 
  */
 module.exports = function(
 	name = 'express-ts app',
-	view = false,
-	mongoose = false,
 ) {
 	// the version of the app
 	const version = '0.0.1';
@@ -36,14 +33,7 @@ module.exports = function(
 		start: 'node ./bin/www.js',
 	};
 
-	// add mongoose
-	if (mongoose) {
-		dependencies.mongoose = '^5.4.18';
-		devDependencies['@types/mongoose'] = '^5.3.21';
-	}
-	if (view) {
-		dependencies.pug = '^2.0.3';
-	}
+
 	const appPackage = {
 		version,
 		name,
