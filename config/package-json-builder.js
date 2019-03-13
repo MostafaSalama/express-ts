@@ -7,11 +7,9 @@
 /**
  *
  * @param name {String} the name of the project
- * @return {String} the json string representation of package.json file 
+ * @return {String} the json string representation of package.json file
  */
-module.exports = function(
-	name = 'express-ts app',
-) {
+module.exports = function(name = 'express-ts app') {
 	// the version of the app
 	const version = '0.0.1';
 	const description = 'A simple express app created with express-ts';
@@ -22,6 +20,7 @@ module.exports = function(
 		express: '^4.16.4',
 		'http-errors': '^1.7.2',
 		morgan: '^1.9.1',
+		pug: '^2.0.3',
 	};
 	const devDependencies = {
 		'@types/cookie-parser': '^1.4.1',
@@ -33,7 +32,6 @@ module.exports = function(
 		start: 'node ./bin/www.js',
 	};
 
-
 	const appPackage = {
 		version,
 		name,
@@ -43,8 +41,7 @@ module.exports = function(
 		dependencies,
 		devDependencies,
 	};
-	return JSON.stringify(appPackage)
-		.replace(/[,{}]/ig,(str)=>{
-			return str+'\n';
-		});
+	return JSON.stringify(appPackage).replace(/[,{}]/gi, str => {
+		return str + '\n';
+	});
 };
