@@ -1,30 +1,16 @@
 const chalk = require('chalk');
-const path = require('path');
-const fs = require('fs');
 const createIndex = require('./createIndex');
 const createBin = require('./createBin');
-const templateDir = path.join(__dirname, '..', 'template');
+const createRoutes = require('./createRoutes') ;
 
-/**
- * creates a new dir(folder) in the  cwd
- * @param name {string} name of the dir(folder)
- * @return {string} the path of the dir(folder)
- */
-function createDir(name) {
-	console.log(chalk.green(`creating the ${name} folder`));
-	const dirPath = path.join(process.cwd(), name);
-	try {
-		fs.mkdirSync(dirPath);
-	} catch (e) {
-		console.log(chalk.red(e.message));
-	}
-	return dirPath;
-}
+
 
 function createApp(name) {
 	console.log(chalk.green('creating the app ...'));
 	createIndex();
 	console.log(chalk.green('creating bin folder'));
 	createBin();
+	console.log(chalk.green('creating routes')) ;
+	createRoutes();
 }
 module.exports = createApp;
