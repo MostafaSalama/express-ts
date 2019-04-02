@@ -2,15 +2,17 @@ const chalk = require('chalk');
 const createIndex = require('./createIndex');
 const createBin = require('./createBin');
 const createRoutes = require('./createRoutes') ;
+const fs = require('fs') ;
+const path = require('path') ;
 
+function createApp(name = 'express-app') {
 
-
-function createApp(name) {
 	console.log(chalk.green('creating the app ...'));
-	createIndex();
+	fs.mkdirSync(path.join(process.cwd(),name))
+	createIndex(name);
 	console.log(chalk.green('creating bin folder'));
-	createBin();
+	createBin(name);
 	console.log(chalk.green('creating routes')) ;
-	createRoutes();
+	createRoutes(name);
 }
 module.exports = createApp;

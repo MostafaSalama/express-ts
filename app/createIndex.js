@@ -6,7 +6,7 @@ function createIndexTemplate(appName) {
 	const indexPath = path.join(__dirname, '..', 'template/index.ts');
 	const fileDate = fs.readFileSync(indexPath);
 	const projectFile = fs.createWriteStream(
-		path.join(process.cwd(), 'index.ts'),
+		path.join(process.cwd(),appName, 'index.ts'),
 	);
 	projectFile.write(fileDate, err => {
 		if(err) throw err ;
