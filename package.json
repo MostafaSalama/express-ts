@@ -5,8 +5,8 @@
   },
   "name": "express-ts",
   "description": "Command line for creating Express.js apps with TypeScript inspired by express application generator",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "0.0.1",
+  "main": "./bin/index.js",
   "bin": {
     "express-ts": "./bin/index.js"
   },

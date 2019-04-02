@@ -15,4 +15,4 @@ function createPublic(appName) {
         throw e ;
     }
 }
-module.exports = createPublic ; 
+module.exports = createPublic ;
