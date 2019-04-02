@@ -2,6 +2,7 @@ const chalk = require('chalk');
 const createIndex = require('./createIndex');
 const createBin = require('./createBin');
 const createRoutes = require('./createRoutes');
+const createViews = require('./createViews') ;
 const packageBuilder = require('../config/package-json-builder');
 const fs = require('fs');
 const path = require('path');
@@ -18,5 +19,7 @@ function createApp(name = 'express-app') {
 	createBin(name);
 	console.log(chalk.green('creating routes'));
 	createRoutes(name);
+    console.log(chalk.green('creating views'));
+	createViews(name) ;
 }
 module.exports = createApp;
