@@ -15,18 +15,18 @@ module.exports = function(name = 'express-ts') {
 	const description = 'A simple express app created with express-ts';
 	const main = './bin/www.js';
 	const dependencies = {
-		'cookie-parser': '^1.4.4',
-		debug: '^4.1.1',
-		express: '^4.16.4',
-		'http-errors': '^1.7.2',
-		morgan: '^1.9.1',
-		pug: '^2.0.3',
+		'cookie-parser': 'latest',
+		debug: 'latest',
+		express: 'latest',
+		'http-errors': 'latest',
+		morgan: 'latest',
+		pug: 'latest',
 	};
 	const devDependencies = {
-		'@types/cookie-parser': '^1.4.1',
-		'@types/express': '^4.16.1',
-		'@types/http-errors': '^1.6.1',
-		'@types/node': '^11.11.0',
+		'@types/cookie-parser': 'latest',
+		'@types/express': 'latest',
+		'@types/http-errors': 'latest',
+		'@types/node': 'latest',
 	};
 	const scripts = {
 		start: 'node ./bin/www.js',
