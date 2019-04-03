@@ -3,7 +3,7 @@
     "chalk": "^2.4.2",
     "commander": "^2.19.0"
   },
-  "name": "express-ts",
+  "name": "type-express",
   "description": "Command line for creating Express.js apps with TypeScript inspired by express application generator",
   "version": "0.0.1",
   "main": "./bin/index.js",

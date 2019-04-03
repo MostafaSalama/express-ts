@@ -7,17 +7,20 @@ Command line for creating simple  Express.js apps with TypeScript inspired by ex
 npm 
 
 `
-npm i -g express-ts`
+npm i -g type-express`
 
 yarn 
 
 `
-yarn global add express-ts 
+yarn global add type-express
 `
 
 `
 express-ts app-name
 `
+`cd app-name`
+
+run `yarn` or `npm i` 
 
 this will a create an express app with typescript with pug as a default template engine 
 
