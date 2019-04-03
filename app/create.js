@@ -8,7 +8,11 @@ const createPublic = require('./createPublic');
 const fs = require('fs');
 const path = require('path');
 
-function createApp(name = 'express-app') {
+function createApp(name) {
+	if(!name) {
+		console.log(chalk.red('please provide a new dir name to create the project in')) ;
+		return ; 
+	}
 	console.log(chalk.green('creating the app ...'));
 	fs.mkdirSync(path.join(process.cwd(), name));
 	console.log(chalk.green('creating package.json File'));
